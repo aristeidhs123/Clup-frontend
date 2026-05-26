@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Φόρμα Συμμετοχής</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { 
+            overflow-x: hidden; 
+            font-family: sans-serif; 
+            background-color: #1a1c38; /* Σκούρο φόντο */
+            color: #fff;
+        }
+        button, input, select, textarea { font: inherit; }
+        button { border: none; cursor: pointer; transition: all 0.3s ease; }
+        
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #23264a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo span { color: #4a63e8; }
+        .nav-links a { color: #cfcfff; text-decoration: none; margin: 0 15px; font-weight: 500; }
+        .login-btn {
+            background: #4a63e8;
+            color: #fff;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-weight: 600;
+        }
+        .login-btn:hover { opacity: 0.94; }
+
+        /* Η ΔΙΚΗ ΣΟΥ ΦΟΡΜΑ */
+        .form-page-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            min-height: 80vh;
+        }
+        .form-card {
+            background: #23264a;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .form-card h2 { margin-bottom: 10px; font-size: 1.8rem; }
+        .form-card p { color: #cfcfff; margin-bottom: 25px; font-size: 0.95rem; }
+        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+        .form-group label { margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #cfcfff; }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+        .form-submit-btn {
+            width: 100%;
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-weight: 600;
+            background: #4a63e8;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        .form-submit-btn:hover { opacity: 0.94; transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Cl<span>UP</span></div>
+        <nav class="nav-links">
+            <a href="#">Feed</a>
+            <a href="#">Clubs</a>
+            <a href="#">Events</a>
+            <a href="#">Profile</a>
+            <a href="#">Admin</a>
+        </nav>
+        <button class="login-btn">Login</button>
+    </header>
+
+    <div class="form-page-container">
+        <div class="form-card">
+            <h2>Αίτηση Συμμετοχής</h2>
+            <p>Συμπληρώστε τα στοιχεία σας για να γίνετε μέλος της ομάδας μας.</p>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="fullname">Ονοματεπώνυμο</label>
+                    <input type="text" id="fullname" placeholder="π.χ. Μαρία Παπαδοπούλου" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Επικοινωνίας</label>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                </div>
+
+             
+                
+                <div class="form-group">
+                    <label for="message">Λίγα λόγια για εσάς</label>
+                    <textarea id="message" rows="4" placeholder="Γιατί θέλετε να γίνετε μέλος;"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit-btn">Υποβολή Αίτησης</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
