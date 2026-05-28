@@ -2,21 +2,19 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>Clubs</title>
-
-  <!-- ΣΩΣΤΟ PATH ΓΙΑ CSS -->
+  <title>Clubs - CluP</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-  <div class="logo">CI<span>UP</span></div>
+  <div class="logo">Cl<span>UP</span></div>
   <nav class="nav-links">
-    <a href="index.html">Home</a>
+    <a href="home.html">Home</a>
     <a href="clubs.html">Clubs</a>
     <a href="events.html">Events</a>
-    <a href="announcments.html">Announcements</a>
+    <a href="announcements.html">Announcements</a>
     <a href="reviews.html">Reviews</a>
     <a href="profile.html">Profile</a>
     <a href="admin.html">Admin</a>
@@ -24,49 +22,25 @@
 </header>
 
 <section class="page-note">
-  <p>**Σελίδα συλλόγων: Αναζήτηση και προβολή συλλόγων από το backend.**</p>
+  <p><strong>Σελίδα Συλλόγων:</strong> Προβολή όλων των πανεπιστημιακών συλλόγων, με δυνατότητα συμμετοχής και δημιουργίας νέου συλλόγου.</p>
+</section>
+
+<section class="section" style="text-align:center; margin-bottom:20px;">
+  <button class="primary-btn" onclick="window.location.href='create_club.html'">
+    Δημιουργία Πανεπιστημιακού Συλλόγου
+  </button>
 </section>
 
 <section class="section">
   <h2>All Clubs</h2>
-  <p>Προβολή όλων των συλλόγων.</p>
 
-  <div id="clubs-container" class="cards-grid">
-    <!-- JS θα βάλει εδώ τα clubs -->
+  <div class="cards-grid" id="clubs-list">
+    <!-- Οι κάρτες θα φορτωθούν δυναμικά από το clubs.js -->
   </div>
 </section>
 
-<script>
-// ===============================
-//  BACKEND PLACEHOLDER
-// ===============================
-
-// TODO: Αντικατάστησε με fetch("/api/clubs")
-async function fetchClubs() {
-  return [
-    { title: "Computer Science Club", description: "Workshops & hackathons" },
-    { title: "Music Society", description: "Live εμφανίσεις & events" }
-  ];
-}
-
-async function renderClubs() {
-  const clubs = await fetchClubs();
-  const container = document.getElementById("clubs-container");
-
-  container.innerHTML = clubs.map(club => `
-    <div class="card">
-      <div class="card-top bg-blue"></div>
-      <div class="card-content">
-        <h3>${club.title}</h3>
-        <p>${club.description}</p>
-        <button class="btn btn-primary full">View Club</button>
-      </div>
-    </div>
-  `).join("");
-}
-
-renderClubs();
-</script>
+<script type="module" src="../connection_f_b/api.js"></script>
+<script type="module" src="../scripts/clubs.js"></script>
 
 </body>
 </html>

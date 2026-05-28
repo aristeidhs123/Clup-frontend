@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Announcements - CluP</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Cl<span>UP</span></div>
+  <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="events.html">Events</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="profile.html">Profile</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
+
+<!-- PAGE NOTE -->
+<section class="page-note">
+  <p><strong>Σελίδα Ανακοινώσεων:</strong> Προβολή όλων των ανακοινώσεων από συλλόγους, με δυνατότητα δημιουργίας νέας ανακοίνωσης.</p>
+</section>
+
+<!-- CREATE ANNOUNCEMENT BUTTON (για manager) -->
+<section class="section" style="text-align:center; margin-bottom:20px;">
+  <button class="primary-btn" onclick="window.location.href='announcement_create.html'">
+    Δημιουργία Ανακοίνωσης
+  </button>
+</section>
+
+<!-- ANNOUNCEMENTS LIST -->
+<section class="section">
+  <h2>All Announcements</h2>
+
+  <div class="cards-grid" id="announcements-list">
+    <!-- TODO: backend: φόρτωση από /api/announcements -->
+
+    <!-- SAMPLE ANNOUNCEMENT 1 -->
+    <div class="card card-cyan">
+      <div class="card-top gradient-3"></div>
+      <div class="card-content">
+        <h3>New Meeting</h3>
+        <p>Συνάντηση μελών την Παρασκευή στις 18:00.</p>
+
+        <p><strong>Club:</strong> Tech Club</p>
+        <p><strong>Date:</strong> 2024-05-01</p>
+        <p><strong>Visibility:</strong> Public</p>
+
+        <button class="card-btn" onclick="window.location.href='announcement_details.html'">
+          View Announcement
+        </button>
+      </div>
+    </div>
+
+    <!-- SAMPLE ANNOUNCEMENT 2 -->
+    <div class="card card-purple">
+      <div class="card-top gradient-2"></div>
+      <div class="card-content">
+        <h3>Private Update</h3>
+        <p>Ενημέρωση για τα μέλη σχετικά με τις επόμενες δράσεις.</p>
+
+        <p><strong>Club:</strong> Music Society</p>
+        <p><strong>Date:</strong> 2024-04-20</p>
+        <p><strong>Visibility:</strong> Private</p>
+
+        <button class="card-btn" onclick="window.location.href='announcement_details.html'">
+          View Announcement
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>CluP — University Community Platform</p>
+</footer>
+
+<script src="../connection_f_b/api.js" defer></script>
+</body>
+</html>

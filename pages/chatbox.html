@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbox - CluP</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Cl<span>UP</span></div>
+  <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="events.html">Events</a>
+    <a href="announcements.html">Announcements</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="profile.html">Profile</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
+
+<!-- PAGE NOTE -->
+<section class="page-note">
+  <p><strong>Chatbox:</strong> Αυτόματη βοήθεια και δυνατότητα επικοινωνίας με admin.</p>
+</section>
+
+<!-- CHATBOX -->
+<section class="section">
+  <div class="card">
+    <div class="card-content">
+
+      <h3>Chat Support</h3>
+
+      <!-- CHAT WINDOW -->
+      <div id="chatWindow" style="
+        height: 300px;
+        background: #1a1a2e;
+        border-radius: 14px;
+        padding: 15px;
+        color: #ccc;
+        overflow-y: auto;
+        margin-bottom: 15px;
+      ">
+        <!-- TODO: JS θα γεμίσει αυτόματα -->
+        <p><strong>Chatbot:</strong> Γεια σου! Πώς μπορώ να βοηθήσω;</p>
+      </div>
+
+      <!-- USER INPUT -->
+      <input 
+        id="chatInput"
+        type="text"
+        placeholder="Γράψε το μήνυμά σου..."
+        style="width:100%; padding:12px; border-radius:10px; margin-bottom:10px;"
+      >
+
+      <button class="primary-btn" id="sendMessageBtn">Send</button>
+
+      <!-- CONTACT ADMIN OPTION -->
+      <div style="margin-top:20px;">
+        <button class="secondary-btn" id="contactAdminBtn">
+          Επικοινωνία με Admin
+        </button>
+      </div>
+
+      <!-- CONTACT FORM (HIDDEN INITIALLY) -->
+      <div id="contactForm" style="display:none; margin-top:20px;">
+        <h3>Φόρμα Επικοινωνίας με Admin</h3>
+
+        <input type="text" placeholder="Όνομα" style="width:100%; padding:10px; margin-top:10px;">
+        <input type="email" placeholder="Email" style="width:100%; padding:10px; margin-top:10px;">
+        <textarea rows="4" placeholder="Περιέγραψε το πρόβλημά σου..." style="width:100%; padding:10px; margin-top:10px;"></textarea>
+
+        <button class="primary-btn" style="margin-top:15px;">Αποστολή Φόρμας</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>CluP — University Community Platform</p>
+</footer>
+
+<script src="../connection_f_b/api.js" defer></script>
+</body>
+</html>

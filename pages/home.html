@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CluP - Home</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Cl<span>UP</span></div>
+    <nav class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="events.html">Events</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="profile.html">Profile</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <button class="login-btn">Login</button>
+  </header>
+
+  <!-- PAGE NOTE -->
+  <section class="page-note">
+    <p><strong>Αρχική σελίδα:</strong> Ενοποιημένη προβολή συλλόγων, εκδηλώσεων, ανακοινώσεων, αξιολογήσεων και προφίλ χρήστη.</p>
+  </section>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Σύνδεσε τη φοιτητική σου ζωή.</h1>
+      <p>Ανακάλυψε συλλόγους, εκδηλώσεις, ανακοινώσεις και ευκαιρίες συμμετοχής σε ένα ενιαίο περιβάλλον.</p>
+      <div class="hero-actions">
+        <a href="clubs.html" class="primary-btn">Σύλλογοι</a>
+        <a href="events.html" class="secondary-btn">Εκδηλώσεις</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="search-section">
+    <div class="search-box">
+      <input type="text" placeholder="Search clubs, events, announcements..." />
+      <button class="search-btn">Search</button>
+    </div>
+  </section>
+
+  <!-- CATEGORIES (στατική φοιτητική ταξινόμηση) -->
+  <section class="categories">
+    <button class="active">Όλα</button>
+    <button class="category-btn culture">Πολιτισμός</button>
+    <button class="category-btn tech">Τεχνολογία</button>
+    <button class="category-btn music">Μουσική</button>
+    <button class="category-btn theatre">Θέατρο</button>
+    <button class="category-btn dance">Χορός</button>
+    <button class="category-btn info">Ενημέρωση</button>
+  </section>
+
+  <!-- CLUBS PREVIEW -->
+  <section class="cards-section" id="clubs-section">
+    <div class="section-title">
+      <h2>Popular Student Clubs</h2>
+      <p>Οι πιο ενεργοί σύλλογοι αυτή τη στιγμή.</p>
+    </div>
+    <div class="cards-grid" id="clubsGrid">
+      <!-- TODO: backend: φόρτωση από /api/clubs (status=approved, πιο δημοφιλή) -->
+      <div class="card card-blue">
+        <div class="card-top gradient-1"></div>
+        <div class="card-content">
+          <h3>Tech Club</h3>
+          <p>Σύλλογος τεχνολογίας με δράσεις, workshops και hackathons.</p>
+          <div class="tags">
+            <span class="tag tech">Τεχνολογία</span>
+          </div>
+          <button class="card-btn">View Club</button>
+        </div>
+      </div>
+
+      <div class="card card-purple">
+        <div class="card-top gradient-2"></div>
+        <div class="card-content">
+          <h3>Music Society</h3>
+          <p>Σύλλογος μουσικής για πρόβες, συναυλίες και events.</p>
+          <div class="tags">
+            <span class="tag music">Μουσική</span>
+          </div>
+          <button class="card-btn">View Club</button>
+        </div>
+      </div>
+
+      <div class="card card-cyan">
+        <div class="card-top gradient-3"></div>
+        <div class="card-content">
+          <h3>Volunteer Group</h3>
+          <p>Δράσεις εθελοντισμού και κοινωνικής προσφοράς.</p>
+          <div class="tags">
+            <span class="tag volunteering">Εθελοντισμός</span>
+          </div>
+          <button class="card-btn">View Club</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <a href="clubs.html" class="secondary-btn">Όλοι οι Σύλλογοι</a>
+    </div>
+  </section>
+
+  <!-- EVENTS PREVIEW -->
+  <section class="cards-section" id="events-section">
+    <div class="section-title">
+      <h2>Upcoming Events</h2>
+      <p>Εκδηλώσεις από πανεπιστημιακούς συλλόγους.</p>
+    </div>
+    <div class="cards-grid" id="eventsGrid">
+      <!-- TODO: backend: φόρτωση από /api/events (ev_status='upcoming') -->
+      <div class="card card-purple">
+        <div class="card-top gradient-2"></div>
+        <div class="card-content">
+          <h3>Hackathon 2024</h3>
+          <p>24ωρος διαγωνισμός προγραμματισμού με ομάδες φοιτητών.</p>
+          <p><strong>Location:</strong> Patras</p>
+          <p><strong>Seats:</strong> 50</p>
+          <button class="card-btn">View Event</button>
+        </div>
+      </div>
+
+      <div class="card card-blue">
+        <div class="card-top gradient-1"></div>
+        <div class="card-content">
+          <h3>Music Night</h3>
+          <p>Live βραδιά με φοιτητικά συγκροτήματα.</p>
+          <p><strong>Location:</strong> Aula</p>
+          <p><strong>Seats:</strong> 120</p>
+          <button class="card-btn">View Event</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <a href="events.html" class="secondary-btn">Όλες οι Εκδηλώσεις</a>
+    </div>
+  </section>
+
+  <!-- ANNOUNCEMENTS PREVIEW -->
+  <section class="cards-section" id="announcements-section">
+    <div class="section-title">
+      <h2>Latest Announcements</h2>
+      <p>Ενημερώσεις από συλλόγους και ομάδες.</p>
+    </div>
+    <div class="cards-grid" id="announcementsGrid">
+      <!-- TODO: backend: φόρτωση από /api/announcements -->
+      <div class="card card-cyan">
+        <div class="card-top gradient-3"></div>
+        <div class="card-content">
+          <h3>New Meeting</h3>
+          <p>Συνάντηση μελών την Παρασκευή στις 18:00.</p>
+          <p><strong>Club:</strong> Tech Club</p>
+          <p><strong>Date:</strong> 2024-05-01</p>
+          <button class="card-btn">View Announcement</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <a href="announcements.html" class="secondary-btn">Όλες οι Ανακοινώσεις</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS PREVIEW -->
+  <section class="cards-section" id="reviews-section">
+    <div class="section-title">
+      <h2>Latest Reviews</h2>
+      <p>Αξιολογήσεις εκδηλώσεων από φοιτητές.</p>
+    </div>
+    <div class="cards-grid" id="reviewsGrid">
+      <!-- TODO: backend: φόρτωση από /api/reviews -->
+      <div class="card card-blue">
+        <div class="card-top gradient-1"></div>
+        <div class="card-content">
+          <h3>Hackathon 2024</h3>
+          <p><strong>Rating:</strong> ★★★★★</p>
+          <p>Φοβερή εμπειρία, πολύ καλή οργάνωση και mentoring.</p>
+          <p><strong>Reviewer:</strong> User #5</p>
+          <button class="card-btn">View Review</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <a href="reviews.html" class="secondary-btn">Όλες οι Αξιολογήσεις</a>
+    </div>
+  </section>
+
+  <!-- PROFILE PREVIEW -->
+  <section class="cards-section" id="profile-section">
+    <div class="section-title">
+      <h2>Your Profile</h2>
+      <p>Γρήγορη επισκόπηση του προφίλ σου.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-content">
+          <!-- TODO: backend: /api/user/me -->
+          <h3 id="profileName">Όνομα Επώνυμο</h3>
+          <p><strong>Role:</strong> user</p>
+          <p><strong>Interests:</strong> Music, Tech</p>
+          <p><strong>Bio:</strong> Σύντομη περιγραφή χρήστη...</p>
+          <button class="card-btn" onclick="window.location.href='profile.html'">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN ALERTS (θα εμφανίζεται μόνο αν ο χρήστης είναι admin στο μέλλον) -->
+  <section class="cards-section" id="admin-section">
+    <div class="section-title">
+      <h2>Admin Dashboard Overview</h2>
+      <p>Σύνοψη εκκρεμοτήτων για τον διαχειριστή συστήματος.</p>
+    </div>
+    <div class="cards-grid">
+      <!-- TODO: backend: /api/admin/dashboard -->
+      <div class="card card-purple">
+        <div class="card-top gradient-2"></div>
+        <div class="card-content">
+          <h3>Pending Clubs</h3>
+          <p>3 clubs awaiting approval.</p>
+          <button class="card-btn" onclick="window.location.href='admin.html'">Review</button>
+        </div>
+      </div>
+
+      <div class="card card-cyan">
+        <div class="card-top gradient-3"></div>
+        <div class="card-content">
+          <h3>Pending Membership Requests</h3>
+          <p>5 membership requests need review.</p>
+          <button class="card-btn" onclick="window.location.href='admin.html'">View Requests</button>
+        </div>
+      </div>
+
+      <div class="card card-blue">
+        <div class="card-top gradient-1"></div>
+        <div class="card-content">
+          <h3>Unread Chatbot / Contact Messages</h3>
+          <p>2 messages waiting for admin response.</p>
+          <button class="card-btn" onclick="window.location.href='admin.html'">Open Messages</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS (στατικά για τώρα) -->
+  <section class="stats-section">
+    <div class="stat-box">
+      <h3>120+</h3>
+      <p>Student Clubs</p>
+    </div>
+    <div class="stat-box">
+      <h3>4.5k</h3>
+      <p>Registered Students</p>
+    </div>
+    <div class="stat-box">
+      <h3>320+</h3>
+      <p>Monthly Events</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>CluP — University Community Platform</p>
+  </footer>
+
+  <!-- JS: εδώ ήδη έχεις api.js, δεν βάζω άλλο για να μην μπλεχτεί -->
+  <!-- Όταν θελήσουμε δυναμική φόρτωση, μπορούμε να προσθέσουμε π.χ. home.js -->
+  <script src="../connection_f_b/api.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Event - CluP</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">Cl<span>UP</span></div>
+  <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="events.html">Events</a>
+  </nav>
+</header>
+
+<section class="page-note">
+  <p><strong>Δημιουργία Εκδήλωσης:</strong> Συμπλήρωση φόρμας για νέα εκδήλωση.</p>
+</section>
+
+<section class="section">
+  <div class="card">
+    <div class="card-content">
+
+      <h3>Create Event</h3>
+
+      <input type="text" placeholder="Event Title" style="width:100%; padding:10px;">
+      <textarea rows="4" placeholder="Event Description" style="width:100%; padding:10px; margin-top:10px;"></textarea>
+
+      <input type="text" placeholder="Location" style="width:100%; padding:10px; margin-top:10px;">
+      <input type="number" placeholder="Seats" style="width:100%; padding:10px; margin-top:10px;">
+      <input type="datetime-local" style="width:100%; padding:10px; margin-top:10px;">
+
+      <button class="primary-btn" style="margin-top:20px;">Publish Event</button>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>CluP — University Community Platform</p>
+</footer>
+
+<script src="../connection_f_b/api.js" defer></script>
+</body>
+</html>

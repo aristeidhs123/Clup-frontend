@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Club Details - CluP</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Cl<span>UP</span></div>
+  <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="events.html">Events</a>
+    <a href="announcments.html">Announcements</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="profile.html">Profile</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
+
+<!-- PAGE NOTE -->
+<section class="page-note">
+  <p><strong>Προφίλ Συλλόγου:</strong> Πλήρης προβολή πληροφοριών συλλόγου, ανακοινώσεων, εκδηλώσεων και λειτουργιών μέλους.</p>
+</section>
+
+<!-- CLUB HEADER -->
+<section class="section">
+  <div class="card">
+    <div class="card-content">
+      <!-- TODO: backend: φόρτωση από /api/clubs/:id -->
+      <h2 id="clubTitle">Tech Club</h2>
+      <p id="clubDescription">Σύλλογος τεχνολογίας με δράσεις, workshops και hackathons.</p>
+
+      <div class="tags">
+        <span id="clubStatus">Status: approved</span>
+        <span id="clubManager">Manager: User #1</span>
+        <span id="clubCreated">Created: 2024-03-01</span>
+      </div>
+
+      <!-- MEMBER ACTIONS -->
+      <button class="primary-btn" id="joinBtn">Join Club</button>
+      <button class="secondary-btn" id="leaveBtn" style="margin-left:10px;">Leave Club</button>
+
+      <!-- MANAGER ACTIONS -->
+      <div style="margin-top:20px;">
+        <button class="primary-btn" id="editClubBtn">Edit Club Profile</button>
+        <button class="secondary-btn" id="pendingRequestsBtn" style="margin-left:10px;">
+          Pending Membership Requests
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENTS SECTION -->
+<section class="cards-section">
+  <div class="section-title">
+    <h2>Club Announcements</h2>
+    <p>Ανακοινώσεις που έχουν δημοσιευθεί από τον σύλλογο.</p>
+  </div>
+
+  <div class="cards-grid" id="clubAnnouncements">
+    <!-- TODO: backend: φόρτωση από /api/clubs/:id/announcements -->
+
+    <div class="card card-cyan">
+      <div class="card-top gradient-3"></div>
+      <div class="card-content">
+        <h3>New Meeting</h3>
+        <p>Συνάντηση μελών την Παρασκευή στις 18:00.</p>
+        <p><strong>Date:</strong> 2024-05-01</p>
+        <button class="card-btn">View Announcement</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:16px;">
+    <button class="primary-btn">Create Announcement</button>
+  </div>
+</section>
+
+<!-- EVENTS SECTION -->
+<section class="cards-section">
+  <div class="section-title">
+    <h2>Club Events</h2>
+    <p>Εκδηλώσεις που διοργανώνει ο σύλλογος.</p>
+  </div>
+
+  <div class="cards-grid" id="clubEvents">
+    <!-- TODO: backend: φόρτωση από /api/clubs/:id/events -->
+
+    <div class="card card-purple">
+      <div class="card-top gradient-2"></div>
+      <div class="card-content">
+        <h3>Hackathon 2024</h3>
+        <p>24ωρος διαγωνισμός προγραμματισμού.</p>
+        <p><strong>Location:</strong> Patras</p>
+        <p><strong>Seats:</strong> 50</p>
+        <button class="card-btn">View Event</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:16px;">
+    <button class="primary-btn">Create Event</button>
+  </div>
+</section>
+
+<!-- SCHEDULE SECTION -->
+<section class="cards-section">
+  <div class="section-title">
+    <h2>Club Schedule</h2>
+    <p>Χρονοδιάγραμμα δραστηριοτήτων του συλλόγου.</p>
+  </div>
+
+  <div class="cards-grid" id="clubSchedule">
+    <!-- TODO: backend: φόρτωση από /api/clubs/:id/schedule -->
+
+    <div class="card card-blue">
+      <div class="card-top gradient-1"></div>
+      <div class="card-content">
+        <h3>Weekly Meeting</h3>
+        <p>Συζήτηση για projects και προγραμματισμό δράσεων.</p>
+        <p><strong>Date:</strong> 2024-05-10</p>
+        <button class="card-btn">View Activity</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:16px;">
+    <button class="primary-btn">Manage Schedule</button>
+  </div>
+</section>
+
+<!-- STATISTICS SECTION -->
+<section class="cards-section">
+  <div class="section-title">
+    <h2>Club Statistics</h2>
+    <p>Στατιστικά συμμετοχής, εκδηλώσεων και επισκεψιμότητας.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card card-purple">
+      <div class="card-top gradient-2"></div>
+      <div class="card-content">
+        <h3>Event Statistics</h3>
+        <p>Συμμετοχές, πληρότητα, δημοτικότητα εκδηλώσεων.</p>
+        <button class="card-btn">View Stats</button>
+      </div>
+    </div>
+
+    <div class="card card-cyan">
+      <div class="card-top gradient-3"></div>
+      <div class="card-content">
+        <h3>Member Participation</h3>
+        <p>Στατιστικά συμμετοχής μελών σε δράσεις.</p>
+        <button class="card-btn">View Stats</button>
+      </div>
+    </div>
+
+    <div class="card card-blue">
+      <div class="card-top gradient-1"></div>
+      <div class="card-content">
+        <h3>User Visits</h3>
+        <p>Επισκεψιμότητα στη σελίδα του συλλόγου.</p>
+        <button class="card-btn">View Stats</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>CluP — University Community Platform</p>
+</footer>
+
+<script src="../connection_f_b/api.js" defer></script>
+</body>
+</html>

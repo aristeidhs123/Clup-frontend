@@ -2,74 +2,102 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>Admin Panel</title>
+  <title>Admin Dashboard - CluP</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-  <div class="logo">CI<span>UP</span></div>
+  <div class="logo">Cl<span>UP</span></div>
   <nav class="nav-links">
-    <a href="index.html">Feed</a>
-    <a href="clubs.html">Clubs</a>
-    <a href="events.html">Events</a>
-    <a href="announcements.html">Announcements</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="profile.html">Profile</a>
+    <a href="home.html">Home</a>
     <a href="admin.html">Admin</a>
   </nav>
 </header>
 
-<section class="section">
-  <h2>Admin Dashboard</h2>
-
-  <div id="admin-container" class="cards-grid"></div>
+<section class="page-note">
+  <p><strong>Admin Dashboard:</strong> Εποπτεία συλλόγων, αιτήσεων, μηνυμάτων και στατιστικών.</p>
 </section>
 
-<script>
-// TODO: Αντικατάστησε με fetch("/api/admin/dashboard")
-async function fetchAdminData() {
-  return {
-    pendingClubs: 3,
-    pendingMessages: 5,
-    statsAvailable: true
-  };
-}
+<section class="cards-section">
+  <div class="section-title">
+    <h2>Pending Items</h2>
+  </div>
 
-async function renderAdmin() {
-  const data = await fetchAdminData();
-  const container = document.getElementById("admin-container");
+  <div class="cards-grid">
 
-  container.innerHTML = `
-    <div class="card">
+    <div class="card card-purple">
+      <div class="card-top gradient-2"></div>
       <div class="card-content">
         <h3>Pending Clubs</h3>
-        <p>${data.pendingClubs} clubs awaiting approval.</p>
-        <button class="btn btn-primary full">Review</button>
+        <p>3 clubs awaiting approval.</p>
+        <button class="card-btn">Review</button>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card-cyan">
+      <div class="card-top gradient-3"></div>
       <div class="card-content">
-        <h3>Admin Messages</h3>
-        <p>${data.pendingMessages} messages need attention.</p>
-        <button class="btn btn-primary full">Open</button>
+        <h3>Membership Requests</h3>
+        <p>5 membership requests need review.</p>
+        <button class="card-btn">View Requests</button>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card card-blue">
+      <div class="card-top gradient-1"></div>
       <div class="card-content">
-        <h3>Statistics</h3>
-        <p>View platform statistics.</p>
-        <button class="btn btn-primary full">View Stats</button>
+        <h3>Unread Messages</h3>
+        <p>2 messages waiting for admin response.</p>
+        <button class="card-btn">Open Messages</button>
       </div>
     </div>
-  `;
-}
 
-renderAdmin();
-</script>
+  </div>
+</section>
 
+<section class="cards-section">
+  <div class="section-title">
+    <h2>Application Statistics</h2>
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card card-purple">
+      <div class="card-top gradient-2"></div>
+      <div class="card-content">
+        <h3>Chatbot Usage</h3>
+        <p>Στατιστικά χρήσης chatbot.</p>
+        <button class="card-btn">View Stats</button>
+      </div>
+    </div>
+
+    <div class="card card-cyan">
+      <div class="card-top gradient-3"></div>
+      <div class="card-content">
+        <h3>App Performance</h3>
+        <p>Στατιστικά αποδοτικότητας.</p>
+        <button class="card-btn">View Stats</button>
+      </div>
+    </div>
+
+    <div class="card card-blue">
+      <div class="card-top gradient-1"></div>
+      <div class="card-content">
+        <h3>App Usage</h3>
+        <p>Στατιστικά χρήσης εφαρμογής.</p>
+        <button class="card-btn">View Stats</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>CluP — University Community Platform</p>
+</footer>
+
+<script src="../connection_f_b/api.js" defer></script>
 </body>
 </html>

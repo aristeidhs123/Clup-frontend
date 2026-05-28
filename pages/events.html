@@ -2,67 +2,135 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>Events</title>
+  <title>Events - CluP</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
-  <div class="logo">CI<span>UP</span></div>
+  <div class="logo">Cl<span>UP</span></div>
   <nav class="nav-links">
-    <a href="index.html">Home</a>
+    <a href="home.html">Home</a>
     <a href="clubs.html">Clubs</a>
     <a href="events.html">Events</a>
-    <a href="announcments.html">Announcements</a>
+    <a href="announcements.html">Announcements</a>
     <a href="reviews.html">Reviews</a>
     <a href="profile.html">Profile</a>
     <a href="admin.html">Admin</a>
   </nav>
 </header>
 
+<!-- PAGE NOTE -->
 <section class="page-note">
-  <p>**Σελίδα εκδηλώσεων: Προβολή και σύνδεση με events API.**</p>
+  <p><strong>Σελίδα Εκδηλώσεων:</strong> Προβολή όλων των εκδηλώσεων, συμμετοχή, δημιουργία νέας εκδήλωσης και πρόσβαση σε προηγούμενες εκδηλώσεις.</p>
 </section>
 
+<!-- CREATE EVENT BUTTON (για manager) -->
+<section class="section" style="text-align:center; margin-bottom:20px;">
+  <button class="primary-btn" onclick="window.location.href='create_event.html'">
+    Δημιουργία Εκδήλωσης
+  </button>
+</section>
+
+<!-- EVENTS LIST -->
 <section class="section">
-  <h2>Events</h2>
-  <div id="events-container" class="cards-grid"></div>
-</section>
+  <h2>Upcoming Events</h2>
 
-<script>
-// TODO: Αντικατάστησε με fetch("/api/events")
-async function fetchEvents() {
-  return [
-    {
-      title: "Hackathon 2024",
-      description: "24-hour coding challenge",
-      location: "Patras",
-      seats: 50
-    }
-  ];
-}
+  <div class="cards-grid" id="events-list">
+    <!-- TODO: backend: φόρτωση από /api/events?status=upcoming -->
 
-async function renderEvents() {
-  const events = await fetchEvents();
-  const container = document.getElementById("events-container");
-
-  container.innerHTML = events.map(ev => `
-    <div class="card">
-      <div class="card-top bg-purple"></div>
+    <!-- SAMPLE EVENT CARD 1 -->
+    <div class="card card-purple">
+      <div class="card-top gradient-2"></div>
       <div class="card-content">
-        <h3>${ev.title}</h3>
-        <p>${ev.description}</p>
-        <p><strong>Location:</strong> ${ev.location}</p>
-        <p><strong>Seats:</strong> ${ev.seats}</p>
-        <button class="btn btn-primary full">View Event</button>
+        <h3>Hackathon 2024</h3>
+        <p>24ωρος διαγωνισμός προγραμματισμού με ομάδες φοιτητών.</p>
+
+        <p><strong>Location:</strong> Patras</p>
+        <p><strong>Seats:</strong> 50</p>
+        <p><strong>Starts:</strong> 2024-06-10 10:00</p>
+
+        <div class="tags">
+          <span>Status: upcoming</span>
+        </div>
+
+        <button class="card-btn" onclick="window.location.href='event_details.html'">
+          View Event
+        </button>
+
+        <button class="secondary-btn" style="margin-top:10px;">
+          Participate
+        </button>
       </div>
     </div>
-  `).join("");
-}
 
-renderEvents();
-</script>
+    <!-- SAMPLE EVENT CARD 2 -->
+    <div class="card card-blue">
+      <div class="card-top gradient-1"></div>
+      <div class="card-content">
+        <h3>Music Night</h3>
+        <p>Live βραδιά με φοιτητικά συγκροτήματα.</p>
 
+        <p><strong>Location:</strong> Aula</p>
+        <p><strong>Seats:</strong> 120</p>
+        <p><strong>Starts:</strong> 2024-06-15 20:00</p>
+
+        <div class="tags">
+          <span>Status: upcoming</span>
+        </div>
+
+        <button class="card-btn" onclick="window.location.href='event_details.html'">
+          View Event
+        </button>
+
+        <button class="secondary-btn" style="margin-top:10px;">
+          Participate
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAST EVENTS -->
+<section class="section">
+  <h2>Past Events</h2>
+
+  <div class="cards-grid" id="past-events-list">
+    <!-- TODO: backend: φόρτωση από /api/events?status=completed -->
+
+    <div class="card card-cyan">
+      <div class="card-top gradient-3"></div>
+      <div class="card-content">
+        <h3>Volunteer Day</h3>
+        <p>Ημέρα εθελοντισμού με δράσεις καθαρισμού.</p>
+
+        <p><strong>Location:</strong> Rio</p>
+        <p><strong>Ended:</strong> 2024-04-20</p>
+
+        <div class="tags">
+          <span>Status: completed</span>
+        </div>
+
+        <button class="card-btn" onclick="window.location.href='event_details.html'">
+          View Event
+        </button>
+
+        <button class="secondary-btn" style="margin-top:10px;">
+          Rate Event
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>CluP — University Community Platform</p>
+</footer>
+
+<script src="../connection_f_b/api.js" defer></script>
 </body>
 </html>
